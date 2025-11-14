@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PALETA PASTEL PRINCIPAL -->
+    <color name="primary_pastel">#FFB39DDB</color> <!-- Lila suave -->
+    <color name="secondary_pastel">#FF81D4FA</color> <!-- Azul cielo -->
+    <color name="accent_pastel">#FF80CBC4</color> <!-- Verde menta -->
+
+    <!-- COLORES DE EVENTOS PASTEL -->
+    <color name="ultrasound_pastel">#FFF8BBD0</color> <!-- Rosa pastel - Ecografías -->
+    <color name="medical_pastel">#FF90CAF9</color> <!-- Azul pastel - Citas médicas -->
+    <color name="personal_pastel">#FFFFF9C4</color> <!-- Amarillo suave - Hitos personales -->
+
+    <!-- COLORES NEUTROS -->
+    <color name="background_pastel">#FFFAFAFA</color> <!-- Blanco roto -->
+    <color name="text_primary">#FF424242</color> <!-- Gris oscuro suave -->
+    <color name="text_secondary">#FF757575</color> <!-- Gris medio -->
+    <color name="card_background">#FFFFFFFF</color> <!-- Blanco puro -->
+
+    <!-- COLORES EXISTENTES (los mantenemos por compatibilidad) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores para notificaciones -->
+    <color name="red_500">#F44336</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="orange_500">#FF9800</color>
+    <color name="green_500">#4CAF50</color>
+
+    <!-- Bottom Navigation Colors -->
+    <color name="bottom_nav_colors">#FFB39DDB</color> <!-- Actualizado a lila pastel -->
+
+    <!-- COLORES NUEVOS PARA LA APP -->
+    <color name="primary">#FFB39DDB</color> <!-- Actualizado a lila pastel -->
+    <color name="primary_dark">#FF9575CD</color> <!-- Lila más oscuro -->
+    <color name="primary_light">#FFD1C4E9</color> <!-- Lila más claro -->
+    <color name="gray">#FF9E9E9E</color>
+</resources>

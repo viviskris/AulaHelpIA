@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/tvDayNumber"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:text="1"
+        android:background="#f0f0f0"
+        android:textStyle="bold"/>
+
+</LinearLayout>

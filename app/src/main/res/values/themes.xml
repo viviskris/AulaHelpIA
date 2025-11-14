@@ -1,0 +1,31 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.CreciendoJuntos" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Personalizamos con nuestra paleta pastel - CORREGIDO -->
+        <item name="colorPrimary">@color/secondary_pastel</item> <!-- Azul cielo como primario -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+
+        <item name="colorSecondary">@color/accent_pastel</item> <!-- Verde menta como secundario -->
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/medical_pastel</item>
+        <item name="colorOnSecondaryContainer">@color/text_primary</item>
+
+        <!-- Colores de superficie CORREGIDOS -->
+        <item name="colorSurface">@color/background_pastel</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:colorBackground">@color/background_pastel</item>
+        <item name="colorOnBackground">@color/text_primary</item>
+
+        <!-- Colores de elementos UI -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:navigationBarColor">@color/background_pastel</item>
+
+        <!-- Tipografía y formas -->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+    </style>
+
+    <style name="Theme.CreciendoJuntos" parent="Base.Theme.CreciendoJuntos" />
+</resources>

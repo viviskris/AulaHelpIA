@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Sección Ecografías -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ecografías Programadas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#9C27B0" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_agregar_ecografia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Ecografía"
+                android:backgroundTint="#EF5350" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_ecografias"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Sección Citas Médicas -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Citas Médicas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#2196F3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_agregar_cita"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Cita Médica"
+                android:backgroundTint="#64B5F6" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_citas"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- Sección Hitos Personales -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hitos Personales"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"
+            android:textColor="#FF9800" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:padding="16dp">
+
+            <Button
+                android:id="@+id/btn_agregar_hito"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Hito Personal"
+                android:backgroundTint="#FFB74D" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_hitos"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+
+        <!-- 🆕 BANNER ADMOB -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewHitos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-6126138750630663/8205829084" />
+
+    </LinearLayout>
+</ScrollView>

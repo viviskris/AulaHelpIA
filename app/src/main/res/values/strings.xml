@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Creciendo Juntos</string>
+    <string name="title_dashboard">Inicio</string>
+    <string name="title_calendar">Calendario</string>
+    <string name="title_profile">Perfil</string>
+    <string name="welcome_message">¡Bienvenida!</string>
+    <string name="current_week">Semana Actual</string>
+    <string name="days_pregnant">días de embarazo</string>
+    <string name="time_remaining">Tiempo Restante</string>
+    <string name="weeks_to_go">semanas para el parto</string>
+    <string name="baby_size">Tamaño del Bebé</string>
+    <string name="baby_development">Desarrollo del Bebé</string>
+    <string name="baby_development_description">Esta semana, tu bebé está desarrollando sus sentidos principales.</string>
+    <string name="tips_title">Consejos para esta Semana</string>
+    <string name="tip_hydration">Mantente hidratada</string>
+    <string name="tip_rest">Descansa cuando lo necesites</string>
+    <string name="tip_nutrition">Alimentación balanceada</string>
+</resources>
