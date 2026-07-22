@@ -6,15 +6,15 @@ plugins {
 }
 
 android {
-    namespace = "com.tuusuario.creciendojuntos"
-    compileSdk = 34
+    namespace = "com.tuusuario.aulahelpia"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.tuusuario.creciendojuntos"
+        applicationId = "com.tuusuario.aulahelpia"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        targetSdk = 35
+        versionCode = 4
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -25,8 +25,8 @@ android {
             isDebuggable = true
         }
         getByName("release") {
-            isMinifyEnabled = false
-            isShrinkResources = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -62,6 +62,12 @@ android {
 
 dependencies {
     implementation("com.google.android.gms:play-services-ads:22.6.0")
+    implementation("com.google.android.ump:user-messaging-platform:2.1.0")
+
+    // ✅ SOLO UNA VERSIÓN DE BILLING (la más nueva y en Kotlin)
+    implementation("com.android.billingclient:billing-ktx:7.0.0")
+
+    // ✅ core-ktx UNA SOLA VEZ
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -80,10 +86,20 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
     // Room Database
     implementation("androidx.room:room-runtime:2.6.0")
     kapt("androidx.room:room-compiler:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
+
+    // Gemini API
+    implementation("com.google.ai.client.generativeai:generativeai:0.9.0")
+
+    implementation("com.github.clans:fab:1.6.4")
+
+    //implementation("com.android.billingclient:billing:6.0.1")
     //implementation("androidx.cardview:cardview:1.0.0")
     //implementation("com.google.android.material:material:1.9.0")
+    // Para seleccionar/recortar imágenes
+
 }

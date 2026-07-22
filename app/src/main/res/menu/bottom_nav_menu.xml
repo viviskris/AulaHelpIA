@@ -16,4 +16,9 @@
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="Mi Perfil" />
 
+    <item
+        android:id="@+id/navigation_assistant"
+        android:icon="@drawable/ic_assistant"
+        android:title="Asistente" />
+
 </menu>

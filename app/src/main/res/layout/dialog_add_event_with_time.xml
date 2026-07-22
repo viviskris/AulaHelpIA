@@ -1,145 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    android:background="@color/surface_dark">
 
+    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="20dp">
 
         <!-- Título del diálogo -->
         <TextView
-            android:id="@+id/dialogTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Agregar Evento"
-            android:textSize="18sp"
+            android:text="⏰ Plan con Recordatorio"
+            android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/purple_neon"
             android:gravity="center"
-            android:layout_marginBottom="16dp" />
+            android:layout_marginBottom="20dp" />
 
-        <!-- Título del evento -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            app:boxCornerRadiusBottomEnd="8dp"
-            app:boxCornerRadiusBottomStart="8dp"
-            app:boxCornerRadiusTopEnd="8dp"
-            app:boxCornerRadiusTopStart="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/eventTitleEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Título del evento"
-                android:maxLines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Descripción del evento -->
+        <!-- Campo: Título del Plan -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            app:boxBackgroundColor="@color/background_dark"
             app:boxCornerRadiusBottomEnd="8dp"
             app:boxCornerRadiusBottomStart="8dp"
             app:boxCornerRadiusTopEnd="8dp"
             app:boxCornerRadiusTopStart="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/eventDescriptionEditText"
+                android:id="@+id/etEventTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Descripción (opcional)"
-                android:maxLines="3" />
+                android:hint="🎯 Título de mi plan"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!-- Selección de hora -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hora del evento:"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp" />
-
-        <!-- 🆕 OPCIONES DE RECORDATORIO -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Recordatorios:"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="24dp"
-            android:paddingStart="8dp">
-
-            <!-- Recordatorio 30 minutos antes -->
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkRecordatorio30min"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="30 minutos antes"
-                android:checked="true" />
-
-            <!-- Recordatorio 1 hora antes -->
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkRecordatorio1hora"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1 hora antes"
-                android:checked="true" />
-
-            <!-- Recordatorio 1 día antes -->
-            <com.google.android.material.checkbox.MaterialCheckBox
-                android:id="@+id/checkRecordatorio1dia"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="1 día antes" />
-
-        </LinearLayout>
-
-        <!-- Botones -->
+        <!-- Selector de Fecha y Hora -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="end">
+            android:layout_marginBottom="16dp"
+            android:weightSum="2">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/cancelButton"
+            <!-- Fecha -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Fecha:"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvSelectedDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hoy"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="12dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+            <!-- Hora -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🕒 Hora:"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvSelectedTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="14:30"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="12dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Recordatorio -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="24dp"
+            android:paddingVertical="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🔔 Recordatorio AulaHelpIA"
+                android:textSize="14sp"
+                android:textColor="@color/text_primary" />
+
+            <Switch
+                android:id="@+id/switchReminder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true" />
+
+        </LinearLayout>
+
+        <!-- Botones de Acción -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_marginEnd="8dp"
                 android:text="Cancelar"
-                style="@style/Widget.Material3.Button.TextButton" />
+                android:textColor="@color/text_secondary"
+                app:backgroundTint="@color/background_dark"
+                app:cornerRadius="8dp" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/saveButton"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Guardar"
-                style="@style/Widget.Material3.Button" />
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="💫 Crear con Alarma"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/purple_neon"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
 
     </LinearLayout>
-</ScrollView>
+
+    <!-- BANNER ADMOB -->
+    <!-- 🧪 ID DE PRUEBA - CAMBIAR POR ID REAL AL PUBLICAR -->
+    <!-- ID REAL: ca-app-pub-6126138750630663/6195676594 -->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adViewDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="12dp"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+</LinearLayout>

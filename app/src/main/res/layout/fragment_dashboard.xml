@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/background_pastel"
+    android:background="@color/surface_dark"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
 
-        <!-- Tarjeta: Resumen Semanal -->
+        <!-- Tarjeta: Mi Panorama AulaHelpIA -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_dark">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,13 +33,63 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Tu Embarazo"
+                    android:text="📊 Mi Panorama AulaHelpIA"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/purple_neon"
                     android:layout_marginBottom="16dp" />
 
-                <!-- Semana Actual -->
+                <!-- Tareas Pendientes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Por hacer hoy: "
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvPendingTasks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 tareas"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_neon" />
+
+                </LinearLayout>
+
+                <!-- Tareas Completadas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Logros de hoy: "
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvCompletedTasks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12 completadas"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/surface_dark" />
+
+                </LinearLayout>
+
+                <!-- Próxima Tarea Importante -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -48,74 +100,22 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Semana:"
+                        android:text="Próxima prioridad:"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary" />
 
                     <TextView
-                        android:id="@+id/weekNumber"
+                        android:id="@+id/tvNextTask"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="12"
+                        android:text="Reunión equipo"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary" />
 
                 </LinearLayout>
 
-                <!-- Días de Embarazo -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Días de embarazo:"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_secondary" />
-
-                    <TextView
-                        android:id="@+id/daysPregnant"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="84 días"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
-
-                </LinearLayout>
-
-                <!-- Días Restantes -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginBottom="12dp">
-
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Días restantes:"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_secondary" />
-
-                    <TextView
-                        android:id="@+id/daysToGo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="186 días"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
-
-                </LinearLayout>
-
-                <!-- Tamaño del Bebé -->
+                <!-- Estado de Energía -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -125,33 +125,32 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Tu bebé es como:"
+                        android:text="Mi energía hoy:"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary" />
 
                     <TextView
-                        android:id="@+id/babySize"
+                        android:id="@+id/tvEnergyLevel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="una ciruela"
+                        android:text="⚡ 85%"
                         android:textSize="14sp"
                         android:textStyle="bold"
-                        android:textColor="@color/text_primary" />
+                        android:textColor="@color/exercise_pastel" />
 
                 </LinearLayout>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta: Próxima Cita -->
+        <!-- 🆕 Experiencia AulaHelpIA Premium -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/purple_neon">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,41 +164,138 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Próxima Cita Médica"
+                    android:text="🚀 Experiencia Sin Anuncios"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/white"
+                    android:gravity="center"
                     android:layout_marginBottom="8dp" />
 
                 <TextView
-                    android:id="@+id/nextAppointment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="15 de Marzo - 10:00 AM"
+                    android:text="Elimina anuncios permanentemente con una compra única"
                     android:textSize="14sp"
-                    android:textColor="@color/text_secondary" />
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnViewCalendar"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/btnRemoveAds"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ver Calendario"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="12dp"
-                    app:backgroundTint="@color/secondary_pastel"
-                    android:textColor="@color/white" />
+                    android:text="❤️ Quitar Anuncios - $8.50"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/purple_neon"
+                    android:paddingVertical="12dp" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta: Consejos de la Semana -->
+        <!-- Agrega al inicio del LinearLayout principal -->
+        <TextView
+            android:id="@+id/tvMotivationalDashboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_corner"
+            android:text="Mensaje motivacional"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:textStyle="italic"/>
+
+        <!-- Tarjeta: Acciones Rápidas AulaHelpIA -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🚀 Acciones Rápidas"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- SOLO 2 BOTONES - SIMPLE Y FUNCIONAL -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <!-- Botón Nueva Tarea -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddTask"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Nueva Tarea"
+                        android:textSize="12sp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:backgroundTint="@color/purple_neon"
+                        android:textColor="@color/white" />
+
+                    <!-- Botón Mi Calendario -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnViewCalendar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Calendario"
+                        android:textSize="11sp"
+                        app:icon="@drawable/ic_calendar"
+                        app:backgroundTint="@color/cyan_bright"
+                        android:textColor="@color/white" />
+
+                </LinearLayout>
+
+                <!-- Botón Filtrar Separado -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFilterTasks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="16dp"
+                    android:text="Filtrar Tareas"
+                    android:textSize="13sp"
+                    app:icon="@android:drawable/ic_menu_sort_by_size"
+                    app:backgroundTint="@color/cyan_bright"
+                    android:textColor="@color/white"
+                    style="@style/Widget.Material3.Button.OutlinedButton" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tarjeta: Mis Tareas del Día -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_dark">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -210,35 +306,53 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Consejos de la Semana"
+                    android:text="📝 Mis Tareas de Hoy"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/purple_neon"
                     android:layout_marginBottom="12dp" />
 
-                <TextView
-                    android:id="@+id/tipsText"
+                <!-- Lista de Tareas -->
+
+                <!-- Estado vacío inspirador -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:lineSpacingExtra="4sp"
-                    android:text="• Descansa cuando lo necesites\n• Mantente hidratada\n• Come frutas y verduras\n• Realiza ejercicio suave"
+                    android:layout_marginTop="8dp"
+                    tools:listitem="@layout/item_evento_con_eliminar" />
+
+                <TextView
+                    android:id="@+id/tvEmptyTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎉 ¡No hay tareas pendientes! \nEs un buen día para planificar algo nuevo."
+                    android:textSize="14sp"
                     android:textColor="@color/text_secondary"
-                    android:textSize="14sp" />
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:visibility="gone" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- 🆕 BANNER ADMOB -->
+        <!-- Banner AdMob -->
+        <!-- 🧪 ID DE PRUEBA - CAMBIAR POR ID REAL AL PUBLICAR -->
+        <!-- ID REAL: ca-app-pub-6126138750630663/6195676594 -->
         <com.google.android.gms.ads.AdView
-            android:id="@+id/adViewDashboard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="16dp"
-            ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-6126138750630663/8205829084" />
+                    android:id="@+id/adViewDashboard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="16dp"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+                <!-- Espacio extra para asegurar scroll -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="gone" />
 
     </LinearLayout>
-
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

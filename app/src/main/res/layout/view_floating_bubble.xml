@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bubbleContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Burbuja Principal -->
+    <LinearLayout
+        android:id="@+id/bubbleMain"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_floating_bubble"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/ivBubbleIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_assistant"
+            android:contentDescription="Tutores AulaHelpIA" />
+
+    </LinearLayout>
+
+    <!-- Contenedor de burbujas secundarias (inicialmente oculto) -->
+    <LinearLayout
+        android:id="@+id/bubbleMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        android:gravity="center_vertical">
+
+        <HorizontalScrollView
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:scrollbars="horizontal"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:id="@+id/bubbleItemsContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Las burbujas se agregarán dinámicamente desde código -->
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</FrameLayout>

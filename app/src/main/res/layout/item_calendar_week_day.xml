@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dayContainer"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/tvDayNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:textColor="@color/text_primary"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- Este TextView es opcional, si no lo quieres, elimínalo del código Kotlin -->
+    <TextView
+        android:id="@+id/tvEventsCount"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="3"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:visibility="gone"
+        android:background="@drawable/circle_today"
+        android:layout_marginTop="2dp" />
+
+    <!-- Este LinearLayout también es opcional -->
+    <LinearLayout
+        android:id="@+id/eventsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingTop="4dp" />
+
+</LinearLayout>

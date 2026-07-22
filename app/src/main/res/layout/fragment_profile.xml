@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_pastel"
-    android:fillViewport="true">
+    android:background="@color/surface_dark"
+    android:fillViewport="true"
+    android:padding="16dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:paddingBottom="40dp">
 
-        <!-- Header con foto de perfil -->
+        <!-- Header con identidad AulaHelpIA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -21,26 +24,25 @@
             android:gravity="center"
             android:layout_marginBottom="24dp">
 
-            <!-- Avatar circular -->
+            <!-- Logo AulaHelpIA -->
             <ImageView
                 android:id="@+id/ivProfilePhoto"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@android:drawable/ic_menu_my_calendar"
-                android:background="@color/primary_light"
-                android:padding="20dp"
-                android:tint="@color/primary_pastel"
-                android:contentDescription="Foto de perfil"
+                android:src="@android:drawable/ic_menu_manage"
+                android:background="@color/purple_neon"
+                android:padding="8dp"
+                android:contentDescription="Logo AulaHelpIA"
                 android:layout_marginBottom="12dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"/>
+                android:foreground="?attr/selectableItemBackgroundBorderless" />
 
             <TextView
                 android:id="@+id/tvUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Agregar nombre"
+                android:text="Mi Planificación"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_primary" />
@@ -49,21 +51,36 @@
                 android:id="@+id/tvUserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="usuario@ejemplo.com"
+                android:text="usuario@aulahelpia.com"
                 android:textSize="14sp"
                 android:textColor="@color/text_secondary"
                 android:layout_marginTop="4dp" />
 
+            <!-- 🆕 NUEVO: Mensaje motivacional FIJO (separado del email) -->
+            <TextView
+                android:id="@+id/tvMotivationalMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Organizando mi vida, un día a la vez ✨"
+                android:textSize="12sp"
+                android:textColor="@color/purple_neon"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp"
+                android:background="@drawable/rounded_corner"
+                android:visibility="visible" />
+
         </LinearLayout>
 
-        <!-- Tarjeta: Información Personal -->
+        <!-- Tarjeta: Mi Progreso AulaHelpIA -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_dark">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,10 +91,380 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Información Personal"
+                    android:text="🎯 Mi Progreso AulaHelpIA"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Eficiencia Semanal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Eficiencia esta semana:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvWeeklyEfficiency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="82%"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_neon" />
+
+                </LinearLayout>
+
+                <!-- Tareas Completadas -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Tareas completadas:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvTasksCompleted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="47"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_neon" />
+
+                </LinearLayout>
+
+                <!-- Racha de Productividad -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Racha productiva:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvProductivityStreak"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🔥 12 días"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/cyan_bright" />
+
+                </LinearLayout>
+
+                <!-- Barra de Progreso Visual -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Mi progreso mensual:"
+                        android:textSize="12sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <ProgressBar
+                        android:id="@+id/progressMonthly"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:progress="65"
+                        android:progressTint="@color/purple_neon"
+                        android:background="@color/purple_neon" />
+
+                    <TextView
+                        android:id="@+id/tvProgressText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="65% de mis metas mensuales"
+                        android:textSize="10sp"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tarjeta: Estadísticas del Horario -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Mi Horario Semanal"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Total de clases -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="📚 Total de clases:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary" />
+
+                    <TextView
+                        android:id="@+id/tvTotalClasesSemana"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_neon" />
+
+                </LinearLayout>
+
+                <!-- Materias más frecuentes -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="🏷️ Materias más frecuentes:"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_secondary"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/tvMateriasFrecuentes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sin clases cargadas"
+                        android:textSize="13sp"
+                        android:textColor="@color/text_primary" />
+
+                </LinearLayout>
+
+                <!-- Progreso semanal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="4dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="📈 Progreso semanal:"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_secondary" />
+
+                        <TextView
+                            android:id="@+id/tvProgresoSemanal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0%"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/cyan_bright" />
+
+                    </LinearLayout>
+
+                    <ProgressBar
+                        android:id="@+id/progressSemanal"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:progress="0"
+                        android:progressTint="@color/cyan_bright"
+                        android:background="@color/purple_neon" />
+
+                    <TextView
+                        android:id="@+id/tvProgresoDetalle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0 de 0 clases completadas"
+                        android:textSize="10sp"
+                        android:textColor="@color/text_secondary"
+                        android:gravity="center"
+                        android:layout_marginTop="4dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tarjeta: Mis Materias -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📚 Mis Materias"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Materias Fijas (4) -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupMaterias"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="false">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMatematicas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📐 Matemáticas"
+                        app:chipBackgroundColor="@color/study_pastel"
+                        app:chipStrokeColor="@color/purple_neon" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipLengua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📖 Lengua Castellana"
+                        app:chipBackgroundColor="@color/personal_pastel"
+                        app:chipStrokeColor="@color/purple_neon" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipBiologia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧬 Biología"
+                        app:chipBackgroundColor="@color/exercise_pastel"
+                        app:chipStrokeColor="@color/purple_neon" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSociales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🌍 Sociales"
+                        app:chipBackgroundColor="@color/important_pastel"
+                        app:chipStrokeColor="@color/purple_neon" />
+
+                </com.google.android.material.chip.ChipGroup>
+
+                <!-- Materias Adicionales (dinámicas) -->
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chipGroupMateriasAdicionales"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:singleSelection="false" />
+
+                <!-- Botón Agregar Materia -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnAgregarMateria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="➕ Agregar materia"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/cyan_bright"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:layout_marginTop="12dp"
+                    android:textAllCaps="false" />
+
+                <TextView
+                    android:id="@+id/tvActivePlansCount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cargando materias..."
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tarjeta: Información Personal -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👤 Mi Cuenta"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
                     android:layout_marginBottom="12dp" />
 
                 <!-- Nombre completo -->
@@ -132,7 +519,7 @@
 
                 </LinearLayout>
 
-                <!-- Última actualización -->
+                <!-- Miembro desde -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -142,15 +529,15 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Última actualización:"
+                        android:text="Miembro desde:"
                         android:textSize="14sp"
                         android:textColor="@color/text_secondary" />
 
                     <TextView
-                        android:id="@+id/tvLastUpdate"
+                        android:id="@+id/tvMemberSince"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hoy"
+                        android:text="Nov 2024"
                         android:textSize="14sp"
                         android:textStyle="bold"
                         android:textColor="@color/text_primary" />
@@ -158,17 +545,16 @@
                 </LinearLayout>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta: Gestión del Embarazo -->
+        <!-- Tarjeta: Preferencias AulaHelpIA (SIN MODO OSCURO) -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardBackgroundColor="@color/surface_dark">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -179,105 +565,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Gestión del Embarazo"
+                    android:text="⚙️ Configuración"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
-                    android:layout_marginBottom="12dp" />
-
-                <!-- Información importante -->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Puedes ajustar las fechas después de tu primera ecografía para mayor precisión"
-                    android:textSize="12sp"
-                    android:textColor="@color/text_secondary"
-                    android:lineSpacingExtra="2sp"
-                    android:layout_marginBottom="16dp"
-                    android:padding="8dp"
-                    android:background="@color/primary_light"
-                    android:backgroundTint="@color/primary_light" />
-
-                <!-- Información de fechas actuales -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginBottom="16dp"
-                    android:padding="12dp"
-                    android:background="@color/primary_light"
-                    android:backgroundTint="@color/primary_light">
-
-                    <TextView
-                        android:id="@+id/tvDueDateInfo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Fecha de parto: No configurada"
-                        android:textSize="12sp"
-                        android:textColor="@color/text_primary"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/tvLastPeriodInfo"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Última regla: No configurada"
-                        android:textSize="12sp"
-                        android:textColor="@color/text_primary"
-                        android:textStyle="bold"
-                        android:layout_marginTop="4dp" />
-
-                </LinearLayout>
-
-                <!-- Botón para reiniciar fecha de parto -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnResetDueDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="🔄 Actualizar fecha de parto"
-                    android:layout_marginBottom="8dp"
-                    app:backgroundTint="@color/accent_pastel"
-                    android:textColor="@color/white"
-                    app:cornerRadius="8dp"
-                    android:textAllCaps="false" />
-
-                <!-- Botón para reiniciar última regla -->
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnResetLastPeriod"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="📅 Actualizar fecha última regla"
-                    app:backgroundTint="@color/secondary_pastel"
-                    android:textColor="@color/white"
-                    app:cornerRadius="8dp"
-                    android:textAllCaps="false" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- Tarjeta: Preferencias de la App -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Preferencias"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/purple_neon"
                     android:layout_marginBottom="12dp" />
 
                 <!-- Notificaciones -->
@@ -295,7 +586,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Notificaciones"
+                        android:text="🔔 Notificaciones"
                         android:textSize="14sp"
                         android:textColor="@color/text_primary" />
 
@@ -307,7 +598,7 @@
 
                 </LinearLayout>
 
-                <!-- Recordatorios de eventos -->
+                <!-- Recordatorios inteligentes -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -322,7 +613,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Recordatorios de eventos"
+                        android:text="⏰ Recordatorios inteligentes"
                         android:textSize="14sp"
                         android:textColor="@color/text_primary" />
 
@@ -335,16 +626,16 @@
                 </LinearLayout>
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- Tarjeta: Acciones -->
+        <!-- Tarjeta: Acciones AulaHelpIA -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp"
-            app:cardBackgroundColor="@color/card_background">
+            app:cardBackgroundColor="@color/surface_dark">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -355,10 +646,10 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Acciones"
+                    android:text="🚀 Acciones AulaHelpIA"
                     android:textSize="16sp"
                     android:textStyle="bold"
-                    android:textColor="@color/primary_pastel"
+                    android:textColor="@color/purple_neon"
                     android:layout_marginBottom="12dp" />
 
                 <!-- Editar perfil -->
@@ -366,38 +657,118 @@
                     android:id="@+id/btnEditProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="✏️ Editar perfil"
+                    android:text="✏️ Personalizar mi experiencia"
                     android:layout_marginBottom="8dp"
-                    app:backgroundTint="@color/primary_pastel"
+                    app:backgroundTint="@color/purple_neon"
                     android:textColor="@color/white"
                     app:cornerRadius="8dp"
                     android:textAllCaps="false" />
 
-                <!-- Configurar hitos -->
+                <!-- Resumen de categorías -->
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnConfigureMilestones"
+                    android:id="@+id/btnConfigureCategories"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="⭐ Configurar hitos"
-                    app:backgroundTint="@color/secondary_pastel"
+                    android:text="📊 Resumen de mis categorías"
+                    app:backgroundTint="@color/cyan_bright"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAllCaps="false" />
+
+                <!-- Activar burbuja de tutores -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnActivarBurbuja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧠 Activar Tutores (Burbuja)"
+                    android:layout_marginBottom="8dp"
+                    app:backgroundTint="@color/purple_neon"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:textAllCaps="false" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDesactivarBurbuja"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🧠 Desactivar Tutores (Burbuja)"
+                    android:layout_marginBottom="8dp"
+                    app:backgroundTint="@color/red_500"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:textAllCaps="false" />
+
+                <!-- Exportar datos -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExportData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📤 Exportar mi progreso"
+                    app:backgroundTint="@color/cyan_bright"
                     android:textColor="@color/white"
                     app:cornerRadius="8dp"
                     android:textAllCaps="false" />
 
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!-- 🆕 BANNER ADMOB -->
+        <!-- Tarjeta: Gestión de Datos -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🛡️ Gestión de Datos"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Botón Eliminar Todos los Datos -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDeleteAllData"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🗑️ Reiniciar mi planificación"
+                    app:backgroundTint="#FF5252"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- BANNER ADMOB -->
+        <!-- 🧪 ID DE PRUEBA - CAMBIAR POR ID REAL AL PUBLICAR -->
+        <!-- ID REAL: ca-app-pub-6126138750630663/6195676594 -->
         <com.google.android.gms.ads.AdView
             android:id="@+id/adViewProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
+            android:layout_marginBottom="32dp"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-6126138750630663/8205829084" />
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+        <!-- ESPACIO EXTRA PARA SCROLL COMPLETO -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="gone" />
 
     </LinearLayout>
-
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

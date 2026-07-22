@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CreciendoJuntos"
+rootProject.name = "aulahelpia"
 include(":app")

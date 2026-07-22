@@ -5,33 +5,52 @@
     android:id="@+id/main_navigation"
     app:startDestination="@id/navigation_dashboard">
 
-    <!-- Dashboard - Pantalla Principal -->
+    <!-- Dashboard Principal -->
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="com.tuusuario.creciendojuntos.home.fragments.DashboardFragment"
-        android:label="Inicio"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="com.tuusuario.aulahelpia.home.fragments.TaskDashboardFragment"
+        android:label="Tareas"
+        tools:layout="@layout/fragment_dashboard">
 
-    <!-- Calendario - TEMPORAL -->
+        <!-- 🆕 ACCIÓN PARA NAVEGAR A NUEVA TAREA -->
+        <action
+            android:id="@+id/action_to_new_task"
+            app:destination="@id/navigation_new_task" />
+
+    </fragment>
+
+    <!-- 🆕 PANTALLA NUEVA TAREA -->
+    <fragment
+        android:id="@+id/navigation_new_task"
+        android:name="com.tuusuario.aulahelpia.home.fragments.NewTaskFragment"
+        android:label="Nueva Tarea"
+        tools:layout="@layout/fragment_new_task">
+
+        <argument
+            android:name="selectedMateria"
+            app:argType="string"
+            android:defaultValue="" />
+
+    </fragment>
+
+    <!-- Calendario -->
     <fragment
         android:id="@+id/navigation_calendar"
-        android:name="com.tuusuario.creciendojuntos.home.fragments.CalendarFragment"
+        android:name="com.tuusuario.aulahelpia.home.fragments.CalendarFragment"
         android:label="Calendario"
         tools:layout="@layout/fragment_calendar" />
 
-    <!-- Perfil - TEMPORAL -->
+    <!-- Perfil -->
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.tuusuario.creciendojuntos.home.fragments.ProfileFragment"
+        android:name="com.tuusuario.aulahelpia.home.fragments.ProfileFragment"
         android:label="Mi Perfil"
         tools:layout="@layout/fragment_profile" />
 
-    <!-- Configuración de Hitos -->
     <fragment
-        android:id="@+id/navigation_hitos_config"
-        android:name="com.tuusuario.creciendojuntos.home.fragments.HitosConfigFragment"
-        android:label="Configurar Hitos"
-        tools:layout="@layout/fragment_hitos_config" />
-
+        android:id="@+id/navigation_assistant"
+        android:name="com.tuusuario.aulahelpia.home.fragments.AssistantChatFragment"
+        android:label="Asistente IA"
+        tools:layout="@layout/fragment_assistant_chat" />
 
 </navigation>

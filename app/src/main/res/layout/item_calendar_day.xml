@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="50dp"
     android:layout_height="50dp"
     android:orientation="vertical"
-    android:background="#ffffff"
-    android:gravity="center">
+    android:background="@color/surface_dark"
+    android:gravity="center"
+    android:padding="4dp">
 
+    <!-- Día del mes -->
     <TextView
         android:id="@+id/tvDayNumber"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
         android:gravity="center"
         android:textSize="14sp"
         android:text="1"
-        android:background="#f0f0f0"
+        android:background="@drawable/circle_day_background"
+        android:textColor="@color/text_primary"
         android:textStyle="bold"/>
+
+    <!-- Indicador de eventos (se muestra dinámicamente) -->
+    <View
+        android:id="@+id/viewEventIndicator"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        app:backgroundTint="@color/purple_neon"
+        android:layout_marginTop="2dp"
+        android:visibility="gone" />
 
 </LinearLayout>

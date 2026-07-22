@@ -1,137 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/background_pastel">
+    android:background="@color/background_dark">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
 
-        <!-- TOOLBAR -->
+        <!-- TOOLBAR CON IDENTIDAD AULAHELPIA -->
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/primary_pastel"
+            app:backgroundTint="@color/purple_neon"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:title="Planeador"
+            app:title="📅 Mi Calendario AulaHelpIA"
             app:titleTextColor="@color/white" />
 
-        <!-- SISTEMA DE BÚSQUEDA Y FILTROS -->
+        <!-- SISTEMA DE BÚSQUEDA Y FILTROS AULAHELPIA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@color/card_background"
+            android:background="@color/surface_dark"
             android:elevation="2dp"
             android:padding="12dp">
 
-            <!-- SearchView para búsqueda textual -->
+            <!-- SearchView para búsqueda -->
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/searchView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:queryHint="Buscar eventos..."
+                android:queryHint="🔍 Buscar en mis planes..."
                 android:layout_marginBottom="8dp"
                 app:iconifiedByDefault="false"
                 app:queryBackground="@android:color/transparent" />
 
-            <!-- ChipGroup para filtros rápidos -->
+            <!-- ChipGroup para materias -->
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/chipGroupFiltros"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:singleSelection="false">
+                app:singleSelection="true"
+                app:selectionRequired="true">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipTodos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Todos"
+                    android:text="📚 Todas"
                     android:checked="true"
-                    app:chipBackgroundColor="@color/primary_light"
+                    app:chipBackgroundColor="@color/purple_neon"
                     app:checkedIconTint="@color/white"
-                    app:chipStrokeColor="@color/primary_pastel" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipSalud"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Salud"
-                    app:chipBackgroundColor="@color/medical_pastel"
-                    app:checkedIconTint="@color/white"
-                    app:chipStrokeColor="@color/primary_pastel" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipEducacion"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Educación"
-                    app:chipBackgroundColor="@color/personal_pastel"
-                    app:checkedIconTint="@color/white"
-                    app:chipStrokeColor="@color/primary_pastel" />
-
-                <com.google.android.material.chip.Chip
-                    android:id="@+id/chipEntretenimiento"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Entretenimiento"
-                    app:chipBackgroundColor="@color/secondary_pastel"
-                    app:checkedIconTint="@color/white"
-                    app:chipStrokeColor="@color/primary_pastel" />
+                    app:chipStrokeColor="@color/purple_neon" />
 
             </com.google.android.material.chip.ChipGroup>
 
         </LinearLayout>
 
-        <!-- CONTENIDO PRINCIPAL DEL CALENDARIO -->
+        <!-- CONTENIDO PRINCIPAL DEL CALENDARIO AULAHELPIA -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Header del Calendario -->
+            <!-- Header del Calendario con estilo AulaHelpIA -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginBottom="16dp"
                 android:gravity="center_vertical"
-                android:layout_marginBottom="16dp">
+                android:orientation="horizontal">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/prevMonthButton"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:text="←"
                     android:layout_marginEnd="8dp"
-                    app:backgroundTint="@color/primary_pastel"
-                    android:textColor="@color/white" />
+                    android:text="←"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/purple_neon"
+                    style="@style/Widget.Material3.Button.IconButton" />
 
                 <TextView
                     android:id="@+id/calendarTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Noviembre 2025"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     android:gravity="center"
-                    android:textColor="@color/text_primary" />
+                    android:text="Noviembre 2024"
+                    android:textColor="@color/text_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/nextMonthButton"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:text="→"
                     android:layout_marginStart="8dp"
-                    app:backgroundTint="@color/primary_pastel"
+                    android:text="→"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/purple_neon"
+                    style="@style/Widget.Material3.Button.IconButton" />
+
+                <!-- Botón Vista Mensual/Semanal -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Vista Semana"
+                    android:textSize="12sp"
+                    app:backgroundTint="@color/cyan_bright"
                     android:textColor="@color/white" />
+
             </LinearLayout>
 
             <!-- Días de la semana -->
@@ -139,197 +129,170 @@
                 android:id="@+id/gvWeekDays"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:numColumns="7"
+                android:background="@color/surface_dark"
                 android:gravity="center"
-                android:background="@color/card_background" />
+                android:numColumns="7" />
 
             <!-- Calendario con altura fija -->
             <GridView
                 android:id="@+id/gvCalendarDays"
                 android:layout_width="match_parent"
                 android:layout_height="320dp"
-                android:numColumns="7"
-                android:verticalSpacing="4dp"
-                android:horizontalSpacing="4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/surface_dark"
                 android:gravity="center"
-                android:background="@color/card_background"
-                android:layout_marginBottom="16dp"/>
+                android:horizontalSpacing="4dp"
+                android:numColumns="7"
+                android:verticalSpacing="4dp" />
 
-            <!-- INFORMACIÓN DE EMBARAZO Y LEYENDA -->
+            <!-- Leyenda - Solo Hoy -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:background="@color/surface_dark"
+                android:elevation="1dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎨 "
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/circle_today" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hoy"
+                    android:textColor="@color/text_primary"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!-- Mensaje Motivacional -->
+            <TextView
+                android:id="@+id/tvMotivationalCalendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="12dp"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corner"
+                android:text="Mensaje motivacional"
+                android:textAlignment="center"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:visibility="visible"/>
+
+            <!-- ⏰ MI HORARIO SEMANAL -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"
+                android:background="@color/surface_dark"
+                android:padding="12dp"
+                android:elevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="⏰ Mi Horario Semanal"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/purple_neon" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnEditHorario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✏️ Editar"
+                        android:textSize="12sp"
+                        app:backgroundTint="@color/cyan_bright"
+                        android:textColor="@color/white"
+                        app:cornerRadius="8dp"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <!-- Contenedor del horario (se llenará desde código) -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal"
+                    android:paddingTop="8dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvHorarioSemanal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+
+                </HorizontalScrollView>
+
+                <!-- Mensaje cuando no hay horario -->
+                <TextView
+                    android:id="@+id/tvHorarioVacio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📌 Aún no has configurado tu horario.\nPresiona 'Editar' para agregar tus clases."
+                    android:textColor="@color/text_secondary"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+            <!-- ESTADÍSTICAS Y RESUMEN AULAHELPIA -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <!-- Información de embarazo -->
+                <!-- Resumen del Mes -->
                 <TextView
-                    android:id="@+id/dueDateText"
+                    android:id="@+id/monthSummaryText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fecha probable de parto: ..."
+                    android:text="@string/month_summary_default"
+                    android:textColor="@color/text_primary"
                     android:textSize="14sp"
-                    android:textColor="@color/text_primary"/>
+                    android:textStyle="bold" />
 
+                <!-- Próximos Eventos -->
                 <TextView
-                    android:id="@+id/currentWeekText"
+                    android:id="@+id/upcomingEventsText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Semana actual: ..."
-                    android:textSize="14sp"
-                    android:textColor="@color/text_primary"/>
-
-                <TextView
-                    android:id="@+id/milestonesText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:text="Hitos del embarazo..."
-                    android:textSize="14sp"
-                    android:lineSpacingExtra="4dp"
-                    android:textColor="@color/text_secondary"/>
-
-                <!-- Leyenda de Colores -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="16dp"
-                    android:padding="12dp"
-                    android:background="@color/card_background"
-                    android:elevation="1dp"
-                    android:backgroundTint="@color/primary_light">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Leyenda de colores:"
-                        android:textStyle="bold"
-                        android:textSize="14sp"
-                        android:layout_marginBottom="8dp"
-                        android:textColor="@color/text_primary"/>
-
-                    <!-- Fila 1: Hoy y Eventos -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
-
-                        <!-- Hoy -->
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:background="@drawable/circle_today"
-                            android:layout_marginEnd="8dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Hoy"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"/>
-
-                        <!-- Eventos -->
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:background="@drawable/circle_personal_event"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="8dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Tus eventos"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"/>
-                    </LinearLayout>
-
-                    <!-- Fila 2: Fecha de parto y Ecografía -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
-
-                        <!-- Fecha de parto -->
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:background="@drawable/circle_due_date"
-                            android:layout_marginEnd="8dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Fecha de parto"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"/>
-
-                        <!-- Ecografía -->
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:background="@drawable/circle_ultrasound"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="8dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Ecografía"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"/>
-                    </LinearLayout>
-
-                    <!-- Fila 3: Hitos importantes -->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
-
-                        <!-- Hitos -->
-                        <View
-                            android:layout_width="16dp"
-                            android:layout_height="16dp"
-                            android:background="@drawable/circle_milestone"
-                            android:layout_marginEnd="8dp"/>
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Hitos importantes"
-                            android:textSize="12sp"
-                            android:textColor="@color/text_primary"/>
-
-                        <!-- Espacio vacío para alinear -->
-                        <View
-                            android:layout_width="0dp"
-                            android:layout_height="16dp"
-                            android:layout_weight="1"
-                            android:layout_marginStart="16dp"/>
-                    </LinearLayout>
-
-                </LinearLayout>
+                    android:text="@string/upcoming_events_default"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
-            <!-- Botón Agregar Evento -->
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/addEventButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:src="@android:drawable/ic_input_add"
-                app:tint="@color/white"
-                app:backgroundTint="@color/secondary_pastel"/>
-
         </LinearLayout>
 
-        <!-- 🆕 BANNER ADMOB -->
+        <!-- BANNER ADMOB -->
         <com.google.android.gms.ads.AdView
             android:id="@+id/adViewCalendar"
             android:layout_width="wrap_content"
@@ -337,7 +300,13 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-6126138750630663/8205829084" />
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+        <!-- ESPACIO EXTRA PARA SCROLL COMPLETO -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:visibility="gone" />
 
     </LinearLayout>
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

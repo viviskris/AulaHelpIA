@@ -1,31 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.CreciendoJuntos" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Personalizamos con nuestra paleta pastel - CORREGIDO -->
-        <item name="colorPrimary">@color/secondary_pastel</item> <!-- Azul cielo como primario -->
+    <style name="Theme.AulaHelpIA" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Color primario (morado neón) -->
+        <item name="colorPrimary">@color/purple_neon</item>
+        <item name="colorPrimaryVariant">@color/purple_neon</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorPrimaryContainer">@color/primary_light</item>
-        <item name="colorOnPrimaryContainer">@color/text_primary</item>
 
-        <item name="colorSecondary">@color/accent_pastel</item> <!-- Verde menta como secundario -->
+        <!-- Color secundario (cian) -->
+        <item name="colorSecondary">@color/cyan_bright</item>
+        <item name="colorSecondaryVariant">@color/cyan_bright</item>
         <item name="colorOnSecondary">@color/white</item>
-        <item name="colorSecondaryContainer">@color/medical_pastel</item>
-        <item name="colorOnSecondaryContainer">@color/text_primary</item>
 
-        <!-- Colores de superficie CORREGIDOS -->
-        <item name="colorSurface">@color/background_pastel</item>
+        <!-- Fondo -->
+        <item name="android:windowBackground">@color/background_dark</item>
+        <item name="android:statusBarColor">@color/background_dark</item>
+        <item name="android:navigationBarColor">@color/background_dark</item>
+
+        <!-- Color de superficie -->
+        <item name="colorSurface">@color/surface_dark</item>
         <item name="colorOnSurface">@color/text_primary</item>
-        <item name="android:colorBackground">@color/background_pastel</item>
-        <item name="colorOnBackground">@color/text_primary</item>
 
-        <!-- Colores de elementos UI -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
-        <item name="android:navigationBarColor">@color/background_pastel</item>
+        <!-- Color de fondo por defecto -->
+        <item name="android:colorBackground">@color/background_dark</item>
 
-        <!-- Tipografía y formas -->
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+        <!-- Color de acento para botones y elementos interactivos -->
+        <item name="colorAccent">@color/purple_neon</item>
+
+        <!-- Color de control (switch, checkbox, etc.) -->
+        <item name="colorControlNormal">@color/text_secondary</item>
+        <item name="colorControlActivated">@color/purple_neon</item>
+        <item name="colorControlHighlight">@color/purple_neon</item>
+
+        <!-- Color de texto por defecto -->
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
     </style>
-
-    <style name="Theme.CreciendoJuntos" parent="Base.Theme.CreciendoJuntos" />
 </resources>

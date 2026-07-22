@@ -1,55 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:background="@color/surface_dark">
 
-    <TextView
-        android:id="@+id/tv_titulo_dialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Seleccionar Fecha"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="16dp"
-        android:gravity="center" />
-
-    <DatePicker
-        android:id="@+id/date_picker"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp" />
-
-    <EditText
-        android:id="@+id/et_descripcion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="Descripción del evento"
-        android:inputType="textMultiLine"
-        android:minHeight="100dp"
-        android:gravity="top" />
-
+    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="end">
+        android:orientation="vertical"
+        android:padding="20dp">
 
-        <Button
-            android:id="@+id/btn_cancelar"
-            android:layout_width="wrap_content"
+        <!-- Título con identidad AulaHelpIA -->
+        <TextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Cancelar"
-            android:layout_marginEnd="8dp" />
+            android:text="📅 Planificar para..."
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_neon"
+            android:gravity="center"
+            android:layout_marginBottom="20dp" />
 
-        <Button
-            android:id="@+id/btn_guardar"
-            android:layout_width="wrap_content"
+        <!-- CalendarView -->
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/surface_dark" />
+
+        <!-- Fecha Seleccionada con estilo AulaHelpIA -->
+        <TextView
+            android:id="@+id/tvSelectedDate"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Guardar"
-            android:backgroundTint="#4CAF50" />
+            android:text="🎯 Planificar para: Hoy"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/purple_neon"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp"
+            android:background="@color/purple_neon"
+            android:backgroundTint="@color/purple_neon" />
+
+        <!-- Botones con identidad AulaHelpIA -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="↩️ Volver"
+                android:textColor="@color/text_secondary"
+                app:backgroundTint="@color/surface_dark"
+                app:cornerRadius="12dp"
+                android:textAllCaps="false" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="🚀 Usar Esta Fecha"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/purple_neon"
+                app:cornerRadius="12dp"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
 
     </LinearLayout>
+
+    <!-- BANNER ADMOB -->
+    <!-- 🧪 ID DE PRUEBA - CAMBIAR POR ID REAL AL PUBLICAR -->
+    <!-- ID REAL: ca-app-pub-6126138750630663/6195676594 -->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/surface_dark">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="8dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+    </com.google.android.material.card.MaterialCardView>
+
 </LinearLayout>

@@ -1,42 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- PALETA PASTEL PRINCIPAL -->
-    <color name="primary_pastel">#FFB39DDB</color> <!-- Lila suave -->
-    <color name="secondary_pastel">#FF81D4FA</color> <!-- Azul cielo -->
-    <color name="accent_pastel">#FF80CBC4</color> <!-- Verde menta -->
+    <!-- Fondo principal -->
+    <color name="background_dark">#121826</color>
+    <color name="surface_dark">#1E293B</color>
 
-    <!-- COLORES DE EVENTOS PASTEL -->
-    <color name="ultrasound_pastel">#FFF8BBD0</color> <!-- Rosa pastel - Ecografías -->
-    <color name="medical_pastel">#FF90CAF9</color> <!-- Azul pastel - Citas médicas -->
-    <color name="personal_pastel">#FFFFF9C4</color> <!-- Amarillo suave - Hitos personales -->
+    <!-- Textos -->
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_light">#64748B</color>
 
-    <!-- COLORES NEUTROS -->
-    <color name="background_pastel">#FFFAFAFA</color> <!-- Blanco roto -->
-    <color name="text_primary">#FF424242</color> <!-- Gris oscuro suave -->
-    <color name="text_secondary">#FF757575</color> <!-- Gris medio -->
-    <color name="card_background">#FFFFFFFF</color> <!-- Blanco puro -->
+    <!-- Acentos IA -->
+    <color name="purple_neon">#A855F7</color>
+    <color name="cyan_bright">#06B6D4</color>
+    <color name="gradient_start">#A855F7</color>
+    <color name="gradient_end">#06B6D4</color>
 
-    <!-- COLORES EXISTENTES (los mantenemos por compatibilidad) -->
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!-- Estados -->
+    <color name="success">#10B981</color>
+    <color name="warning">#F59E0B</color>
+    <color name="error">#EF4444</color>
+
+    <!-- Categorías (pastel) -->
+    <color name="study_pastel">#818CF8</color>
+    <color name="exercise_pastel">#34D399</color>
+    <color name="important_pastel">#FBBF24</color>
+    <color name="personal_pastel">#F472B6</color>
+    <color name="task_pastel">#A78BFA</color>
+
+    <!-- Estados de tareas -->
+    <color name="primary_pastel">#60A5FA</color>
+    <color name="completed_green">#34D399</color>
+    <color name="overdue_red">#F87171</color>
+    <color name="pending_orange">#FB923C</color>
+
+    <!-- Colores de respaldo (para mantener compatibilidad) -->
+    <color name="purple_500">#A855F7</color>
+    <color name="purple_700">#7E22CE</color>
+    <color name="teal_200">#99F6E4</color>
+    <color name="teal_700">#0F766E</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <!-- Colores para notificaciones -->
+    <!-- Materias Pastel -->
+    <color name="math_pastel">#FFB74D</color>
+    <color name="lengua_pastel">#81C784</color>
+    <color name="ciencias_pastel">#4FC3F7</color>
+    <color name="historia_pastel">#FF8A65</color>
+    <color name="ingles_pastel">#4DD0E1</color>
+    <color name="fisica_pastel">#9575CD</color>
+    <color name="quimica_pastel">#F06292</color>
+    <color name="biologia_pastel">#66BB6A</color>
+    <color name="educacion_pastel">#FFD54F</color>
+    <color name="arte_pastel">#FF8A65</color>
+    <color name="musica_pastel">#BA68C8</color>
+    <color name="deporte_pastel">#4DD0E1</color>
     <color name="red_500">#F44336</color>
-    <color name="blue_500">#2196F3</color>
-    <color name="orange_500">#FF9800</color>
-    <color name="green_500">#4CAF50</color>
-
-    <!-- Bottom Navigation Colors -->
-    <color name="bottom_nav_colors">#FFB39DDB</color> <!-- Actualizado a lila pastel -->
-
-    <!-- COLORES NUEVOS PARA LA APP -->
-    <color name="primary">#FFB39DDB</color> <!-- Actualizado a lila pastel -->
-    <color name="primary_dark">#FF9575CD</color> <!-- Lila más oscuro -->
-    <color name="primary_light">#FFD1C4E9</color> <!-- Lila más claro -->
-    <color name="gray">#FF9E9E9E</color>
 </resources>

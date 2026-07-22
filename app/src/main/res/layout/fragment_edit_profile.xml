@@ -1,94 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    android:background="@color/background_pastel">
+    android:background="@color/background_dark"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
 
-        <!-- Título -->
-        <TextView
+        <!-- Header con identidad AulaHelpIA -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Editar Perfil"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_pastel"
-            android:layout_marginBottom="32dp"
-            android:gravity="center" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
 
-        <!-- Campo: Nombre de usuario -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:hintTextColor="@color/primary_pastel"
-            app:boxStrokeColor="@color/primary_pastel"
-            app:startIconDrawable="@android:drawable/ic_menu_edit"
-            app:startIconTint="@color/primary_pastel">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etName"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre de usuario"
-                android:textColor="@color/text_primary"
-                android:maxLines="1" />
+                android:text="✏️ Personalizar Mi Perfil"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/purple_neon"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <!-- Campo: Nombre completo -->
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:hintTextColor="@color/primary_pastel"
-            app:boxStrokeColor="@color/primary_pastel"
-            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
-            app:startIconTint="@color/primary_pastel">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etFullName"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre completo"
-                android:textColor="@color/text_primary"
-                android:maxLines="1" />
+                android:text="Haz tu experiencia AulaHelpIA única para ti"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:gravity="center" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
-        <!-- Campo: Email -->
-        <com.google.android.material.textfield.TextInputLayout
+        <!-- Tarjeta: Información Personal -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            app:hintTextColor="@color/primary_pastel"
-            app:boxStrokeColor="@color/primary_pastel"
-            app:startIconDrawable="@android:drawable/ic_dialog_email"
-            app:startIconTint="@color/primary_pastel">
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/surface_dark">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etEmail"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo electrónico"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/text_primary"
-                android:maxLines="1" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👤 Mi Información"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="16dp" />
 
-        <!-- Botones -->
+                <!-- Campo: Nombre de usuario -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:hintTextColor="@color/purple_neon"
+                    app:boxStrokeColor="@color/purple_neon"
+                    app:startIconDrawable="@android:drawable/ic_menu_edit"
+                    app:startIconTint="@color/purple_neon"
+                    app:boxBackgroundColor="@color/background_dark"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="🎯 Mi nombre en AulaHelpIA"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo: Nombre completo -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:hintTextColor="@color/purple_neon"
+                    app:boxStrokeColor="@color/purple_neon"
+                    app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+                    app:startIconTint="@color/purple_neon"
+                    app:boxBackgroundColor="@color/background_dark"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="📝 Nombre completo"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Campo: Email -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintTextColor="@color/purple_neon"
+                    app:boxStrokeColor="@color/purple_neon"
+                    app:startIconDrawable="@android:drawable/ic_dialog_email"
+                    app:startIconTint="@color/purple_neon"
+                    app:boxBackgroundColor="@color/background_dark"
+                    app:boxCornerRadiusBottomEnd="8dp"
+                    app:boxCornerRadiusBottomStart="8dp"
+                    app:boxCornerRadiusTopEnd="8dp"
+                    app:boxCornerRadiusTopStart="8dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="📧 Correo electrónico"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/text_primary"
+                        android:textSize="16sp"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Tarjeta: Preferencias de Visualización -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/surface_dark">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🎨 Mi Estilo AulaHelpIA"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/purple_neon"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Tema de la app -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Modo oscuro"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+
+                    <Switch
+                        android:id="@+id/switchDarkMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false" />
+
+                </LinearLayout>
+
+                <!-- Notificaciones -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingVertical="12dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Notificaciones motivadoras"
+                        android:textSize="14sp"
+                        android:textColor="@color/text_primary" />
+
+                    <Switch
+                        android:id="@+id/switchNotifications"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Botones de Acción -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center">
+            android:weightSum="2"
+            android:layout_marginBottom="24dp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnCancel"
@@ -96,10 +242,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="8dp"
-                android:text="Cancelar"
-                app:backgroundTint="@color/secondary_pastel"
+                android:text="↩️ Volver"
+                android:textSize="14sp"
+                app:backgroundTint="@color/cyan_bright"
                 android:textColor="@color/white"
-                app:cornerRadius="8dp" />
+                app:cornerRadius="12dp"
+                android:textAllCaps="false" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnSaveProfile"
@@ -107,12 +255,31 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="Guardar"
-                app:backgroundTint="@color/primary_pastel"
+                android:text="💾 Guardar Cambios"
+                android:textSize="14sp"
+                app:backgroundTint="@color/purple_neon"
                 android:textColor="@color/white"
-                app:cornerRadius="8dp" />
+                app:cornerRadius="12dp"
+                android:textAllCaps="false" />
 
         </LinearLayout>
+
+        <!-- BANNER ADMOB -->
+        <!-- 🧪 ID DE PRUEBA - CAMBIAR POR ID REAL AL PUBLICAR -->
+        <!-- ID REAL: ca-app-pub-6126138750630663/6195676594 -->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adViewEditProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+
+        <!-- Espacio extra para scroll -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
     </LinearLayout>
 
