@@ -18,7 +18,7 @@ Actualmente en fase de desarrollo (MVP funcional). La app cuenta con:
 - Gestión de tareas (crear, editar, completar)
 - Horario semanal con recordatorios
 - Tutor IA para Matemáticas (Gemini API)
-- Funcionamiento offline para tareas y horario
+
 
 ## Instalación
 
